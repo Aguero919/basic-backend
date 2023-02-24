@@ -5,7 +5,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     if(err instanceof CustomAPIError) {
         return res.status(err.statusCode).json( { msg: err.message } );
     }
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send("Please try after sometime...");
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send("Please try again after sometime...");
 };
 
 module.exports = errorHandlerMiddleware;
